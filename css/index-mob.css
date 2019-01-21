@@ -1,0 +1,146 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-size: 0;
+    background: url(../img/jaanus-jagomagi-1245520-unsplash.jpg);
+    background-size: 100% 400px;
+    background-position: top;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+header {
+    height: 400px;
+    
+}
+
+.left-con {
+    height: 100%;
+    text-align: center;
+}
+
+.left-con > .switch {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.left-con > .head-portrait {
+    width: 150px;
+    border-radius: 50%;
+    margin-top: 100px;
+    box-shadow: 0 0 50px -25px #dbe2ef;
+}
+
+.left-con > .personal-profile {
+    margin-top: 20px;
+    height: 50px;
+}
+
+.left-con > .personal-profile > .name {
+    color: #dbe2ef;
+    font-size: 20px;
+    text-shadow: 0 0 3px #112d4e;
+}
+
+.left-con > .personal-profile > .profile {
+    color: #dbe2ef;
+    font-size: 15px;
+    text-shadow: 0 0 3px #112d4e;
+}
+
+@keyframes showModal {
+    from{
+        height: 0;
+    }
+    to{
+        height: 100%;
+    }
+}
+
+@keyframes hideModal {
+    from{
+        height: 100%;
+    }
+    to{
+        height: 0;
+    }
+}
+
+.left-con > .links {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 0;
+    background: #dbe2ef;
+    overflow: hidden;
+}
+
+.left-con > .links > nav {
+    margin: 200px auto 0;
+    width: 30%;
+}
+
+.left-con > .links > nav > a {
+    width: 100%;
+    position: relative;
+    color: #3f72af;
+    text-decoration: none;
+    display: block;
+    height: 50px;
+    font-size: 18px;
+}
+
+.left-con > .links > nav > a:before {
+    content: "";
+    position: absolute;
+    width: 50%;
+    height: 3px;
+    bottom: 23px;
+    left: 25%;
+    background-color: #3f72af;
+    visibility: hidden;
+    -webkit-transform: scaleX(0);
+    -o-transform: scaleX(0);
+    transform: scaleX(0);
+    -webkit-transition: all 0.3s ease-in-out 0s;
+    -o-transition: all 0.3s ease-in-out 0s;
+    transition: all 0.3s ease-in-out 0s;
+}
+
+.left-con > .links > nav > a:hover:before {
+    visibility: visible;
+    -webkit-transform: scaleX(1);
+    -o-transform: scaleX(1);
+    transform: scaleX(1);
+}
+
+.left-con > .links > .icon-link {
+    width: 100%;
+    height: 130px;
+    position: absolute;
+    bottom: 0;
+    background: #dbe2ef;
+}
+
+.left-con > .links > .icon-link > a {
+    display: inline-block;
+    margin: 3%;
+}
+
+.left-con > .links > .icon-link > a > svg {
+    width: 30px;
+}
+
+main {
+    background: #f9f7f7;
+}
+
+.right-con > section {
+    height: 500px;
+}
