@@ -61,13 +61,12 @@ function modalSwitch(){
         if(j == true){
             modal.style.animation = 'showModal 1s';
             modal.style.height = '100%';
-            body.style.overflowY = 'hidden';
+            btn.style.position = 'fixed';
             btn_color.setAttribute('fill','#3f72af');
             j = false;
         }else{
             modal.style.animation = 'hideModal 1s';
             modal.style.height = '0';
-            body.style.overflowY = 'scroll';
             setTimeout(function(){
                 btn_color.setAttribute('fill','#dbe2ef');
             },800);
