@@ -3,6 +3,16 @@
     padding: 0;
 }
 
+@font-face {
+    font-family: impact;
+    src: url(../font/Impact\ Label\ Reversed.ttf);
+}
+
+@font-face {
+    font-family: april;
+    src: url(../font/april_flowers_regular.ttf);
+}
+
 body {
     font-size: 0;
     font-family: Arial, Helvetica, sans-serif;
@@ -11,6 +21,7 @@ body {
     background-position: top;
     background-repeat: no-repeat;
     background-attachment: fixed;
+    font-family: april;
 }
 
 header {
@@ -45,13 +56,13 @@ header {
 
 .left-con > .personal-profile > .name {
     color: #dbe2ef;
-    font-size: 20px;
+    font-size: 25px;
     text-shadow: 0 0 3px #112d4e;
 }
 
 .left-con > .personal-profile > .profile {
     color: #dbe2ef;
-    font-size: 15px;
+    font-size: 20px;
     text-shadow: 0 0 3px #112d4e;
 }
 
@@ -80,6 +91,7 @@ header {
     height: 0;
     background: #dbe2ef;
     overflow: hidden;
+    font-family: impact;
 }
 
 .left-con > .links > nav {
