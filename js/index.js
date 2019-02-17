@@ -53,6 +53,8 @@ function setNavbarStyle(){
     }
 }
 
+addLoadEvent(setNavbarStyle());
+
 window.onscroll = function(){
     setNavbarStyle();
 }
