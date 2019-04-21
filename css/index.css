@@ -22,6 +22,10 @@
 
 /*********************** 全局样式 ************************/
 
+* {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
 a {
     color: #48d696;
 }
@@ -124,9 +128,6 @@ a:hover {
 
 #portfolio > ul > li > a > .text {
     margin-left: 10px;
-}
-
-#portfolio > ul > li > a > h4 {
 }
 
 #portfolio > ul > li > a > p {
