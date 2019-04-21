@@ -1,13 +1,9 @@
-function addLoadEvent(func){
-    var oldOnload = window.onload;
-    if(window.onload != 'function'){
-        window.onload = func;
-    }else{
-        window.onload = function(){
-            oldOnload();
-            func();
-        }
-    }
+window.onload = function(){
+    setContactIconStyle("#aaa","#41b883");
+}
+
+window.onscroll = function(){
+    navbarScroll("#fff","transparent");
 }
 
 function getScrollTop(){
@@ -21,72 +17,15 @@ function getScrollTop(){
     return scrollTop;
 }
 
-function setNavbarStyle(){
-    var nav = document.getElementById('navbar');
-    var nav_w = nav.offsetWidth;
-    var nav_a = nav.getElementsByTagName('a');
-    var a_color = 0;
-    var a_size = 0;
-    var a_margin = 0;
-    var a_width = 0;
-    if(/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent) || nav_w < 700){
-        a_size = '14px';
-        a_margin = '0';
-        a_width = '90px';
-    }else{
-        a_size = '20px';
-        a_margin = '0 20px';
-        a_width = '120px';
+function navbarScroll(color1,color2){
+    var nav = document.getElementById("nav");
+    if(getScrollTop() >= 200){
+        nav.style.background = color1;
     }
-    if(getScrollTop() >= 440){
-        nav.className = 'nav-fixed';
-        a_color = '#f9f7f7';
-    }else{
-        nav.className = '';
-        a_color = '#3f72af';
-    }
-    for(var i = 0; i < nav_a.length; i++){
-        nav_a[i].style.color = a_color;
-        nav_a[i].style.fontSize = a_size;
-        nav_a[i].style.margin = a_margin;
-        nav_a[i].style.width = a_width;
+    else{
+        nav.style.background = color2;
     }
 }
-
-addLoadEvent(setNavbarStyle());
-
-window.onscroll = function(){
-    setNavbarStyle();
-}
-
-window.onresize = function(){
-    setNavbarStyle();
-}
-
-function navbar(){
-    var nav = document.getElementById('navbar');
-    var nav_a = nav.getElementsByTagName('a');
-    var headerH = document.getElementsByTagName('header')[0].offsetHeight;
-    var aboutH = document.getElementById('about').offsetHeight;
-    var porfolioH = document.getElementById('porfolio').offsetHeight;
-    var height = new Array;
-    height[0] = 0;
-    height[1] = headerH - 60;
-    height[2] = height[1] + aboutH;
-    height[3] = height[2] + porfolioH;
-    for(var i = 0; i < nav_a.length; i++){
-        nav_a[i].index = i;
-        nav_a[i].onclick = function(){
-            var j = this.index;
-            window.scrollTo({
-                top: height[j],
-                behavior: 'smooth'
-            })
-        }
-    }
-}
-
-addLoadEvent(navbar());
 
 function setContactIconStyle(color1,color2){
     var icon = document.getElementById('contact-icon');
@@ -108,5 +47,3 @@ function setContactIconStyle(color1,color2){
         }
     }
 }
-
-addLoadEvent(setContactIconStyle('#f9f7f7','#3f72af'));
