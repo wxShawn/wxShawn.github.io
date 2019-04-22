@@ -57,7 +57,7 @@ a:hover {
 
 /*********************** home ************************/
 
-#home {
+.home {
     height: 100vh;
     min-height: 300px;
     background: url(../images/the-phope-537400-unsplash.jpg);
@@ -71,7 +71,7 @@ a:hover {
     transform: translateY(-50%);
 }
 
-#home > h1 > p {
+.home > h1 > p {
     color: #41b883;
     font-family: raleway;
     font-weight: normal;
@@ -84,7 +84,7 @@ a:hover {
     }
 }
 
-#home > h1 > button {
+.home > h1 > button {
     background: transparent;
     color: #41b883;
     width: 80px;
@@ -94,7 +94,7 @@ a:hover {
     outline: none;
 }
 
-#home > h1 > button:hover {
+.home > h1 > button:hover {
     animation: btnAnimation 0.5s;
     background: #41b883;
     color: #fff;
@@ -102,30 +102,30 @@ a:hover {
 
 /*********************** portfolio ************************/
 
-#portfolio {
+.portfolio {
     padding: 50px;
 }
 
-#portfolio > h2 {
+.portfolio > h2 {
     color: #777;
 }
 
-#portfolio > hr {
+.portfolio > hr {
     width: 200px;
     margin-bottom: 30px;
 }
 
-#portfolio > ul{
+.portfolio > ul{
     padding: 0;
     list-style: none;
 }
 
-#portfolio > ul > li {
+.portfolio > ul > li {
     padding: 10px;
     background: #fff;
 }
 
-#portfolio > ul > li > a {
+.portfolio > ul > li > a {
     display: block;
     padding: 5px;
     border: 1px solid #ccc;
@@ -133,30 +133,34 @@ a:hover {
     text-decoration: none;
 }
 
-#portfolio > ul > li > a > img {
+.portfolio > ul > li > a > img {
     width: 100%;
 }
 
-#portfolio > ul > li > a > .text {
+.portfolio > ul > li > a > .text {
     margin-left: 10px;
 }
 
-#portfolio > ul > li > a > p {
+.portfolio > ul > li > a > p {
     color: #777;
 }
 
 /*********************** contact ************************/
 
-#contact {
-    border-top: 1px solid #ccc;
+.contact {
+    border-top: 1px solid #eee;
     padding: 30px;
 }
 
-#contact-icon > a {
+.contact-icon {
+    margin: 20px 0 10px;
+}
+
+.contact-icon > a {
     margin: 0 10px;
     text-decoration: none;
 }
 
-#contact-icon > a > svg {
+.contact-icon > a > svg {
     width: 35px;
 }

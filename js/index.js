@@ -1,5 +1,6 @@
 window.onload = function(){
     setContactIconStyle("#aaa","#41b883");
+    navigation();
 }
 
 window.onscroll = function(){
@@ -24,6 +25,43 @@ function navbarScroll(color1,color2){
     }
     else{
         nav.style.background = color2;
+    }
+}
+
+function navigation(){
+    var brand = document.getElementById('brand');
+    var btn = document.getElementById("navbtn");
+    var nav = document.getElementById("navbar");
+    var nav_a = navbar.getElementsByTagName('a');
+    var homeH = document.getElementById('home').offsetHeight;
+    var portfolioH = document.getElementById('portfolio').offsetHeight;
+    var height = new Array;
+    height[0] = 0;
+    height[1] = homeH - 50;
+    height[2] = height[1] + portfolioH;
+    for(var i = 0; i < nav_a.length; i++){
+        nav_a[i].index = i;
+        nav_a[i].onclick = function(){
+            var j = this.index;
+            window.scrollTo({
+                top: height[j],
+                behavior: "smooth"
+            });
+            return false;
+        }
+    }
+    brand.onclick = function(){
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+        return false;
+    }
+    btn.onclick = function(){
+        window.scrollTo({
+            top: height[1],
+            behavior: "smooth"
+        });
     }
 }
 
