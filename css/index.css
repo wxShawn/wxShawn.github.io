@@ -20,6 +20,11 @@
     }
 }
 
+@font-face {
+    font-family: "raleway";
+    src: url(../fonts/raleway_thin.otf);
+}
+
 /*********************** 全局样式 ************************/
 
 body,button, input, select, textarea,h1 ,h2, h3, h4, h5, h6 {
@@ -63,7 +68,7 @@ a:hover {
 
 #home > h1 > p {
     color: #41b883;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: raleway;
     font-weight: normal;
     font-size: 35px;
 }
