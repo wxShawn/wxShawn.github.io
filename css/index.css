@@ -57,6 +57,17 @@ a:hover {
 
 /*********************** home ************************/
 
+@media (min-width: 768px) {
+    .home > h1 > p {
+        font-size: 50px;
+    }
+
+    .hello {
+        font-size: 236px;
+    }
+
+}
+
 .home {
     height: 100vh;
     min-height: 300px;
@@ -71,17 +82,15 @@ a:hover {
     transform: translateY(-50%);
 }
 
+.hello {
+    font-size: 130px;
+}
+
 .home > h1 > p {
     color: #41b883;
     font-family: raleway;
     font-weight: normal;
     font-size: 35px;
-}
-
-@media (min-width: 768px) {
-    #home > h1 > p {
-        font-size: 50px;
-    }
 }
 
 .home > h1 > button {
