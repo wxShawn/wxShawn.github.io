@@ -19,7 +19,7 @@ function getScrollTop(){
 
 function navbarScroll(color1,color2){
     var nav = document.getElementById("nav");
-    if(getScrollTop() >= 100){
+    if(getScrollTop() >= 50){
         nav.style.background = color1;
     }
     else{
