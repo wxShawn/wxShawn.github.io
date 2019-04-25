@@ -112,7 +112,7 @@ a:hover {
 /*********************** portfolio ************************/
 
 .portfolio {
-    padding: 50px;
+    padding: 50px 10px;
 }
 
 .portfolio > h2 {
