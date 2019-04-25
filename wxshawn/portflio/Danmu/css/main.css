@@ -1,0 +1,14 @@
+.danmu-launcher {
+    margin-top: 50px;
+}
+
+.screen {
+    background: lightgray;
+    height: 250px;
+    position: relative;
+    overflow: hidden;
+}
+
+.launcher {
+    padding: 0;
+}

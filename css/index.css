@@ -144,6 +144,7 @@ a:hover {
 
 .portfolio > ul > li > a > img {
     width: 100%;
+    border: 1px solid #eee;
 }
 
 .portfolio > ul > li > a > .text {
