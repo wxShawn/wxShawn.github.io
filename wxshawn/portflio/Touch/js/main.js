@@ -67,7 +67,7 @@ function touch(){
         //方块向下移动
         square.fall = function(speed){
             square.timer = setInterval(function(){
-                square.style.top = square.offsetTop + speed + "px";
+                square.style.top = square.offsetTop + 2 + "px";
 
                 //添加下一个方块
                 if(squares[squares.length-1] && squares[squares.length-1].offsetTop >= 0){
@@ -85,7 +85,7 @@ function touch(){
                         gameOver();
                     }
                 }
-            },10);
+            },speed);
         }
         
         //点击方块后删除方块并加分
@@ -99,19 +99,19 @@ function touch(){
         con.appendChild(square);
         switch(true){
             case time < 15:
-                square.fall(1);
+                square.fall(10);
                 break;
             case time < 30:
-                square.fall(2);
+                square.fall(8);
                 break;
             case time < 60:
-                square.fall(3);
+                square.fall(6);
                 break;
             case time < 150:
                 square.fall(4);
                 break;
             default:
-                square.fall(5);
+                square.fall(2);
         }
     }
 
@@ -120,6 +120,7 @@ function touch(){
 
         //停止计时
         clearInterval(timer);
+        alert("Game Over! " + "  " + t.textContent + "  " + s.textContent);
 
         //删除所有方块
         for(var i = 0; i < squares.length; i++){
