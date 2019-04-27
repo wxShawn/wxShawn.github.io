@@ -1,0 +1,61 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.touch {
+    position: relative;
+    background: #333;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.ui {
+    position: absolute;
+    width: 100%;
+    height: 60%;
+    z-index: 1;
+    border-bottom: 1px solid #555;
+}
+
+.score-board {
+    height: 40px;
+    background: #fff;
+}
+
+.score-board > p {
+    margin: 10px 50px;
+}
+
+.time {
+    float: left;
+}
+
+.score {
+    float: right;
+}
+
+.start {
+    position: absolute;
+    bottom: 0;
+    width: 80px;
+    height: 80px;
+    left: 50%;
+    transform: translateX(-50%);
+    border: none;
+    border-radius: 50%;
+    background: rgb(228, 81, 81);
+    color: #fff;
+}
+
+.con {
+    position: relative;
+    height: 100%;
+}
+
+.square {
+    position: absolute;
+    width: 25%;
+    height: 100px;
+    top: -100px;
+}

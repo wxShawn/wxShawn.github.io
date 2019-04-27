@@ -1,0 +1,133 @@
+window.onload = function(){
+    touch();
+}
+
+function toStringTime(num){
+    if(num >= 3600) return 0;
+    var x = new Array;
+    var a = parseInt(num/60);
+    var b = parseInt(num%60);
+    if(a < 10){
+        x[0] = "0" + a;
+    }
+    else{
+        x[0] = a.toString();
+    }
+    if(b < 10){
+        x[1] = "0" + b;
+    }
+    else{
+        x[1] = b.toString();
+    }
+    return x;
+}
+
+function touch(){
+    
+    var con = document.getElementById("con");
+    var start = document.getElementById("start");
+    var squares = con.getElementsByClassName("square");
+    var t = document.getElementById("time");
+    var s = document.getElementById("score");
+    var timer;
+
+    //游戏时间、分数、生命值
+    var time = 0;
+    var score = 0;
+    var life = 5;
+
+    //开始游戏
+    start.onclick = function(){
+
+        //初始化
+        time = 0;
+        score = 0;
+        life = 5;
+        t.innerText = "time: 00:00";
+        s.innerText = "score: 0";
+        
+        start.style.display = "none";
+        creatSquare();
+
+        //开始计时
+        timer = setInterval(function(){
+            time++;
+            t.innerText = "time: " + toStringTime(time)[0] + ":" + toStringTime(time)[1];
+        },1000);
+    }
+
+    //创建&添加方块
+    function creatSquare(){
+        var square = document.createElement("div");
+        var leftValue = ["0","25%","50%","75%"];
+        square.className = "square";
+        square.style.left = leftValue[parseInt(Math.random()*3.999)];
+        square.style.background = "rgb(" + parseInt(Math.random()*255) +  "," + parseInt(Math.random()*255) + "," + parseInt(Math.random()*255) + ")";
+        
+        //方块向下移动
+        square.fall = function(speed){
+            square.timer = setInterval(function(){
+                square.style.top = square.offsetTop + speed + "px";
+
+                //添加下一个方块
+                if(squares[squares.length-1] && squares[squares.length-1].offsetTop >= 0){
+                    creatSquare();
+                }
+
+                //删除超出屏幕的方块
+                if(square.offsetTop >= con.offsetHeight){
+                    clearInterval(square.timer);
+                    con.removeChild(square);
+                    life--;
+
+                    //生命值为0时游戏结束
+                    if(life <= 0){
+                        gameOver();
+                    }
+                }
+            },10);
+        }
+        
+        //点击方块后删除方块并加分
+        square.onclick = function(){
+            clearInterval(square.timer);
+            con.removeChild(square);
+            score += 5;
+            s.innerText = "score: " + score;
+        }
+
+        con.appendChild(square);
+        switch(true){
+            case time < 15:
+                square.fall(1);
+                break;
+            case time < 30:
+                square.fall(2);
+                break;
+            case time < 60:
+                square.fall(3);
+                break;
+            case time < 150:
+                square.fall(4);
+                break;
+            default:
+                square.fall(5);
+        }
+    }
+
+    //结束游戏
+    function gameOver(){
+
+        //停止计时
+        clearInterval(timer);
+
+        //删除所有方块
+        for(var i = 0; i < squares.length; i++){
+            clearInterval(squares[i].timer);
+        }
+        con.innerHTML = "";
+        start.style.display = "block";
+        start.value = "try again";
+    }
+    
+}
