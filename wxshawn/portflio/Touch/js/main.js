@@ -22,6 +22,15 @@ function toStringTime(num){
     return x;
 }
 
+function stopPropagation(e) {
+    e = e || window.event;
+    if(e.stopPropagation) { 
+        e.stopPropagation();
+    } else {
+        e.cancelBubble = true;
+    }
+}
+
 function touch(){
     
     var con = document.getElementById("con");
@@ -29,8 +38,9 @@ function touch(){
     var squares = con.getElementsByClassName("square");
     var t = document.getElementById("time");
     var s = document.getElementById("score");
+    var l = document.getElementById("life");
     var timer;
-
+    
     //游戏时间、分数、生命值
     var time = 0;
     var score = 0;
@@ -43,8 +53,9 @@ function touch(){
         time = 0;
         score = 0;
         life = 5;
-        t.innerText = "time: 00:00";
-        s.innerText = "score: 0";
+        updateTime();
+        updateScore();
+        updateLife();
         
         start.style.display = "none";
         creatSquare();
@@ -52,8 +63,38 @@ function touch(){
         //开始计时
         timer = setInterval(function(){
             time++;
-            t.innerText = "time: " + toStringTime(time)[0] + ":" + toStringTime(time)[1];
+            updateTime();
         },1000);
+
+        //点击背景减少life
+        con.onclick = function(){
+            life--;
+            updateLife();
+
+            //生命值为0时游戏结束
+            if(life <= 0){
+                gameOver();
+            }
+        }
+    }
+
+    //同步时间
+    function updateTime(){
+        t.innerText = "time: " + toStringTime(time)[0] + ":" + toStringTime(time)[1];
+    }
+
+    //同步分数
+    function updateScore(){
+        s.innerText = "score: " + score;
+    }
+
+    //同步生命
+    function updateLife(){
+        var txt = "";
+        for(var i = 0; i < life; i++){
+            txt += "*";
+        }
+        l.innerText = txt;
     }
 
     //创建&添加方块
@@ -65,7 +106,7 @@ function touch(){
         square.style.background = "rgb(" + parseInt(Math.random()*255) +  "," + parseInt(Math.random()*255) + "," + parseInt(Math.random()*255) + ")";
         square.speed = 0;
 
-        //方块向下移动
+        //方块的移动
         square.fall = function(speed){
             square.speed = speed;
             square.timer = setInterval(function(){
@@ -81,8 +122,7 @@ function touch(){
                     clearInterval(square.timer);
                     con.removeChild(square);
                     life--;
-
-                    //生命值为0时游戏结束
+                    updateLife();
                     if(life <= 0){
                         gameOver();
                     }
@@ -95,7 +135,8 @@ function touch(){
             clearInterval(square.timer);
             con.removeChild(square);
             score += 5;
-            s.innerText = "score: " + score;
+            updateScore();
+            stopPropagation();
         }
 
         //改变速度
@@ -147,6 +188,7 @@ function touch(){
             clearInterval(squares[i].timer);
         }
         con.innerHTML = "";
+
         start.style.display = "block";
         start.value = "try again";
     }

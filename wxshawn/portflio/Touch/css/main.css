@@ -43,6 +43,15 @@ body {
     float: right;
 }
 
+.life {
+    position: absolute;
+    bottom: -70px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #fff;
+    font-size: 30px;
+}
+
 .start {
     position: absolute;
     bottom: 0;
