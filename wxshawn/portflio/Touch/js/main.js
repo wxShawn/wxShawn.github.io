@@ -63,9 +63,11 @@ function touch(){
         square.className = "square";
         square.style.left = leftValue[parseInt(Math.random()*3.999)];
         square.style.background = "rgb(" + parseInt(Math.random()*255) +  "," + parseInt(Math.random()*255) + "," + parseInt(Math.random()*255) + ")";
-        
+        square.speed = 0;
+
         //方块向下移动
         square.fall = function(speed){
+            square.speed = speed;
             square.timer = setInterval(function(){
                 square.style.top = square.offsetTop + 2 + "px";
 
@@ -96,22 +98,40 @@ function touch(){
             s.innerText = "score: " + score;
         }
 
+        //改变速度
+        function changeSpeed(speed){
+            for(var i = 0; i < squares.length; i++){
+                if(squares[i].speed == speed + 1){
+                    clearInterval(squares[i].timer);
+                    squares[i].fall(speed);
+                }
+            }
+        }
+
         con.appendChild(square);
         switch(true){
-            case time < 15:
+            case time < 10:
                 square.fall(10);
                 break;
             case time < 30:
-                square.fall(8);
+                square.fall(9);
+                changeSpeed(9);
                 break;
             case time < 60:
-                square.fall(6);
+                square.fall(8);
+                changeSpeed(8)
                 break;
-            case time < 150:
-                square.fall(4);
+            case time < 90:
+                square.fall(7);
+                changeSpeed(7);
+                break;
+            case time < 120:
+                square.fall(6);
+                changeSpeed(6);
                 break;
             default:
-                square.fall(2);
+                square.fall(5);
+                changeSpeed(5);
         }
     }
 
