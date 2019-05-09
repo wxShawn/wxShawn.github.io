@@ -72,14 +72,14 @@ a:hover {
 }
 
 .hello {
-    font-size: 130px;
+    font-size: 100px;
 }
 
 .home > h1 > p {
     color: #41b883;
     font-family: raleway;
     font-weight: normal;
-    font-size: 35px;
+    font-size: 22px;
 }
 
 .home > h1 > button {
