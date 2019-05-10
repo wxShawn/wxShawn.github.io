@@ -142,7 +142,7 @@ function touch(){
         //改变速度
         function changeSpeed(speed){
             for(var i = 0; i < squares.length; i++){
-                if(squares[i].speed == speed + 1){
+                if(squares[i].speed != speed){
                     clearInterval(squares[i].timer);
                     squares[i].fall(speed);
                 }
@@ -154,19 +154,19 @@ function touch(){
             case time < 10:
                 square.fall(10);
                 break;
-            case time < 30:
+            case time < 20:
                 square.fall(9);
                 changeSpeed(9);
                 break;
-            case time < 60:
+            case time < 30:
                 square.fall(8);
-                changeSpeed(8)
+                changeSpeed(8);
                 break;
-            case time < 90:
+            case time < 45:
                 square.fall(7);
                 changeSpeed(7);
                 break;
-            case time < 120:
+            case time < 60:
                 square.fall(6);
                 changeSpeed(6);
                 break;

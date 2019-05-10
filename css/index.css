@@ -87,7 +87,7 @@ a:hover {
     color: #41b883;
     width: 80px;
     height: 80px;
-    border: 1px solid #41b883;
+    border: 1px solid transparent;
     border-radius: 50%;
     outline: none;
 }
@@ -107,6 +107,9 @@ a:hover {
         font-size: 200px;
     }
 
+    .home > h1 > button {
+        border: 1px solid #41b883;
+    }
 }
 
 /*********************** portfolio ************************/
