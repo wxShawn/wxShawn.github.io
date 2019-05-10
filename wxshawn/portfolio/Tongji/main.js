@@ -2,6 +2,7 @@ window.onload = function(){
     
     var str = document.getElementById("str");
     var btn = document.getElementById("btn");
+
     btn.onclick = function(){
         var myArr = str.value.split(",");
         for(var i = 0; i < myArr.length; i++){
@@ -64,18 +65,19 @@ function calculator(myArr){
 
             //输出分组结果
             var result2 = document.createElement("p");
-            var txt2 = document.createTextNode(temp + "——" + (temp + interval) + ": __" + tmpArray.length + "__" + toPercentage(tmpArray.length/myArr.length));
+            var txt2 = document.createTextNode(temp + "——" + (temp + interval) + ": " + tmpArray.length + " , " + toPercentage(tmpArray.length/myArr.length));
             result2.appendChild(txt2);
             body.appendChild(result2);
 
             temp += interval;
         }
     }
-    output();
-}
 
-//转换为百分数
-function toPercentage(n){
-    var m = n.toFixed(4).slice(2,4) + "." + n.toFixed(4).slice(4,6) + "%";
-    return m;
+    //转换为百分数
+    function toPercentage(n){
+        var m = n.toFixed(4).slice(2,4) + "." + n.toFixed(4).slice(4,6) + "%";
+        return m;
+    }
+
+    output();
 }

@@ -31,16 +31,18 @@ body {
     background: #fff;
 }
 
-.score-board > p {
-    margin: 10px 50px;
-}
+/* .score-board > p {
+    margin: 10px 0;
+} */
 
 .time {
     float: left;
+    margin: 10px 0 10px 50px;
 }
 
 .score {
     float: right;
+    margin: 10px 50px 10px 0;
 }
 
 .life {
