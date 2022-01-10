@@ -1,0 +1,13 @@
+@keyframes shake {
+  0% {transform: rotate(0deg);}
+  52% {transform: rotate(0deg);}
+  54% {transform: rotate(-6deg); transform-origin: bottom;}
+  56% {transform: rotate(6deg); transform-origin: bottom;}
+  58% {transform: rotate(0deg);}
+  100% {transform: rotate(0deg);}
+}
+
+@font-face {
+  font-family: 'AsproSpace';
+  src: url(../fonts/AstroSpace-eZ2Bg.ttf);
+}

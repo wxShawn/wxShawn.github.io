@@ -1,0 +1,138 @@
+nav {
+  font-family: 'AsproSpace';
+}
+
+#home {
+  position: relative;
+  height: 100vh;
+  background-position: bottom;
+  background-size: cover;
+  user-select: none;
+}
+
+/* home hello */
+
+.hello {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  font-family: 'AsproSpace';
+  text-align: center;
+}
+
+.hello > .img {
+  width: 250px;
+  animation-name: shake;
+  animation-duration: 3s; /*动画时间*/
+  animation-iteration-count: infinite; /*次数*/
+  -webkit-user-drag: none;
+}
+
+.hello > .text {
+  margin: 0 auto;
+  width: auto;
+  color: #fff;
+  text-align: center;
+}
+
+.hello .text > p:first-child {
+  font-size: 4rem;
+  margin-bottom: -1rem;
+}
+
+.hello .text > p:last-child {
+  font-size: 1.5rem;
+}
+
+@media (min-width: 576px) {
+  .hello > .img {
+    width: 300px;
+  }
+}
+
+@media (min-width: 768px) {
+  .hello > * {
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  .hello > .text {
+    text-align: left;
+    margin-left: 20px;
+  }
+}
+
+@media (min-width: 992px) {
+  .hello > * {
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  .hello > .text {
+    text-align: left;
+    margin-left: 30px;
+  }
+  
+  .hello .text > p:first-child {
+    font-size: 5rem;
+  }
+  
+  .hello .text > p:last-child {
+    font-size: 1.8rem;
+  }
+}
+
+/* @media (min-width: 1200px) {
+  
+} */
+
+
+/* portfolio */
+
+#portfolio {
+  padding-top: 30px;
+  min-height: 800px;
+}
+
+#portfolio > .row {
+  padding: 10px;
+}
+
+#portfolio > .row > div {
+  padding: 10px;
+  font-size: 0.8rem;
+}
+
+#portfolio .card {
+  border: none;
+  box-shadow: 1px 1px 6px #ddd;
+  color: #000;
+  text-decoration: none;
+}
+
+#portfolio .card > img {
+  width: 100%;
+}
+
+/* footer */
+
+#footer {
+  padding: 1.5rem 0;
+  background: #fff;
+  border-top: 1px solid #eee;
+  text-align: center;
+}
+
+.contact .iconfont {
+  margin: 0 0.5rem;
+  font-size: 2.2rem;
+  color: #000;
+}
+
+.copyright {
+  margin-bottom: 0;
+  font-size: 0.8rem;
+  color: #ccc;
+}

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>wxShawn</title>
+  <link href="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/4.6.1/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="./fonts/iconfont.css">
+  <link rel="stylesheet" href="./styles/commom.css">
+  <link rel="stylesheet" href="./styles/index.css">
+</head>
+<body>
+  <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-transparent">
+    <div class="container-lg">
+      <a class="navbar-brand" href="#">wxShawn</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li to="#home" class="nav-item active">
+            <a class="nav-link">Home</a>
+          </li>
+          <li to="#portfolio" class="nav-item">
+            <a class="nav-link">Portfolio</a>
+          </li>
+          <li to="#footer" class="nav-item">
+            <a class="nav-link">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div id="home">
+    <canvas id="stars"></canvas>
+      <div class="hello">
+        <img class="img" src="./images/astronaut.png" alt="astronaut">
+        <div class="text">
+          <p>HELLO!</p>
+          <p>My name is Wang Xiang.</p>
+        </div>
+      </div>
+  </div>
+  <div id="portfolio" class="container-sm">
+    <p class="h5">Portfolio</p>
+    <hr class="my-2">
+    <div class="row">
+      <div class="col-sm-12 col-md-6 col-lg-4">
+        <a class="card" href="https://wxshawn.github.io/preview/auto_farm">
+          <img class="card-img-top" src="./images/farm_helper_cover.jpg" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">Farm helper</h5>
+            <p class="card-text">更方便地管理你的农场。</p>
+          </div>
+        </a>
+      </div>
+      <div class="col-sm-12 col-md-6 col-lg-4">
+        <a class="card" href="https://wxshawn.github.io/preview/card_manager">
+          <img class="card-img-top" src="./images/card_calculator_cover.jpg" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">Card calculator</h5>
+            <p class="card-text">计算星座卡牌收益。</p>
+          </div>
+        </a>
+      </div>
+      <div class="col-sm-12 col-md-6 col-lg-4">
+        <a class="card" href="https://wxshawn.github.io/preview/touch">
+          <img class="card-img-top" src="./images/Touch_cover.jpg" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">Touch</h5>
+            <p class="card-text">简易版别踩白块儿。</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+  <div id="footer">
+    <div class="contact">
+      <a href="https://github.com/wxShawn" class="iconfont icon-github"></a>
+      <span class="iconfont icon-youxiang"></span>
+    </div>
+    <p class="copyright">© 2022 wxShawn</p>
+  </div>
+  <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/4.6.1/js/bootstrap.min.js"></script>
+  <script src="./scripts/starBackground.js"></script>
+  <script src="./scripts/index.js"></script>
+</body>
+</html>
